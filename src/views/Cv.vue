@@ -43,13 +43,13 @@
       <div class="container">
         <div class="header--content">
           <div class="name">
-            <input class="targ" type="text" placeholder="Цель, область" v-model="asp" />
+            <input class="targ" type="text" placeholder="Ціль, область" v-model="asp" />
           </div>
 
           <div class="info">
             <!-- <div class="targ"> {{ "targ" | localize }}</div> -->
-            <!-- <div :disabled="targ" class="gen" @click="open"> Сгенерировать 10 аспектов </div> -->
-            <button :disabled="!asp" class="gen2" @click="openAsp"> Сгенерировать 10 аспектов </button>
+            <!-- <div :disabled="targ" class="gen" @click="open"> Згенерувати 10 аспектів </div> -->
+            <button :disabled="!asp" class="gen2" @click="openAsp"> Згенерувати 10 аспектів </button>
           </div>
 
         </div>
@@ -67,17 +67,17 @@
 
           <div title="Copy" v-if="isgen" class="ans" ref="text" @click="copyText">
             <div class="grid-cols-1 grid gap-2.5 [&amp;_>_*]:min-w-0">
-              <p class="whitespace-pre-wrap break-words">Расскажи мне о самых специфических и узких понятиях, методах,
-                 ноу-хау  и подходах в области <b>{{ targ }}</b> . Какие
-                малоизвестные и специализированные аспекты существуют в <b>{{ targ }}</b> ?"</p>
-              <p class="whitespace-pre-wrap break-words"> Отвечай максимально кратко </p>
-              <p class="whitespace-pre-wrap break-words"> Формат выдачи ответа: </p>
+              <p class="whitespace-pre-wrap break-words">Розкажи мені про найбільш специфічні та вузькі поняття, методи,
+                 ноу-хау та підходи в області <b>{{ targ }}</b> . Які
+                маловідомі та спеціалізовані аспекти існують в <b>{{ targ }}</b> ?"</p>
+              <p class="whitespace-pre-wrap break-words"> Відповідай максимально коротко </p>
+              <p class="whitespace-pre-wrap break-words"> Формат видачі відповіді: </p>
               <ul class="-mt-1 [li>&amp;]:mt-2 list-disc space-y-2 pl-8" depth="0">
-                <li class="whitespace-normal break-words" index="0">что это</li>
-                <li class="whitespace-normal break-words" index="1">применение</li>
-                <li class="whitespace-normal break-words" index="2">реальный кейс использования из реального мира</li>
+                <li class="whitespace-normal break-words" index="0">що це</li>
+                <li class="whitespace-normal break-words" index="1">застосування</li>
+                <li class="whitespace-normal break-words" index="2">реальний кейс використання з реального світу</li>
               </ul>
-              <p class="whitespace-pre-wrap break-words"> Количество пунктов в списке: <b>{{ qty }}</b> </p>
+              <p class="whitespace-pre-wrap break-words"> Кількість пунктів у списку: <b>{{ qty }}</b> </p>
             </div>
           </div>
 
@@ -102,10 +102,10 @@
                 №</th> -->
               <th
                 class="text-text-000 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] font-400 px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Тип запроса</th>
+                Тип запиту</th>
               <th
                 class="text-text-000 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] font-400 px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Шаблон промпта</th>
+                Шаблон промпту</th>
             </tr>
           </thead>
           <tbody>
@@ -113,96 +113,96 @@
 
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Обзор</td>
+                Огляд</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Сделай обзор <b> {{ asp }} </b> в контексте <b> {{ targ }} </b>. Какие
-                примеры успешного применения и лучшие практики существуют?</td>
+                Зроби огляд <b> {{ asp }} </b> в контексті <b> {{ targ }} </b>. Які
+                приклади успішного застосування та найкращі практики існують?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
  
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Детальный анализ</td>
+                Детальний аналіз</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Создай детальный анализ <b> {{ asp }} </b> в контексте <b> {{  targ }} </b>. Как этот подход используется, какие примеры успешного применения и лучшие практики можно
-                применить?</td>
+                Створи детальний аналіз <b> {{ asp }} </b> в контексті <b> {{  targ }} </b>. Як цей підхід використовується, які приклади успішного застосування та найкращі практики можна
+                застосувати?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
  
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Отчет</td>
+                Звіт</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Составь отчет по <b> {{ asp }} </b> в контексте <b> {{ targ }} </b>.
-                Какие успешные кейсы и лучшие практики существуют?</td>
+                Склади звіт по <b> {{ asp }} </b> в контексті <b> {{ targ }} </b>.
+                Які успішні кейси та найкращі практики існують?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
 
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Детальное объяснение</td>
+                Детальне пояснення</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Подготовь детальное объяснение <b> {{ asp }} </b> в контексте <b> {{  targ }} </b>. Какие примеры успешного применения и лучшие практики можно использовать?</td>
+                Підготуй детальне пояснення <b> {{ asp }} </b> в контексті <b> {{  targ }} </b>. Які приклади успішного застосування та найкращі практики можна використовувати?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
 
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Рекомендации</td>
+                Рекомендації</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Сформулируй рекомендации по применению <b> {{ asp }} </b> в контексте <b> {{  targ }} </b>. Какие успешные примеры и лучшие практики существуют?</td>
+                Сформулюй рекомендації щодо застосування <b> {{ asp }} </b> в контексті <b> {{  targ }} </b>. Які успішні приклади та найкращі практики існують?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
 
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Принцип работы</td>
+                Принцип роботи</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Объясни, как работает <b> {{ asp }} </b> в контексте <b> {{ targ }} </b>.
-                Какие примеры успешного применения и лучшие практики существуют?</td>
+                Поясни, як працює <b> {{ asp }} </b> в контексті <b> {{ targ }} </b>.
+                Які приклади успішного застосування та найкращі практики існують?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
 
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Детальное описание</td>
+                Детальний опис</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Можешь дать детальное описание <b> {{ asp }} </b> в контексте <b> {{  targ }} </b>? Как его используют, примеры успешных кейсов и лучшие практики?</td>
+                Можеш дати детальний опис <b> {{ asp }} </b> в контексті <b> {{  targ }} </b>? Як його використовують, приклади успішних кейсів та найкращі практики?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
 
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Анализ использования</td>
+                Аналіз використання</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Проанализируй использование <b> {{ asp }} </b> в контексте <b> {{  targ }} </b>. Какие примеры успешного применения и лучшие практики существуют?</td>
+                Проаналізуй використання <b> {{ asp }} </b> в контексті <b> {{  targ }} </b>. Які приклади успішного застосування та найкращі практики існують?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
 
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Примеры применения</td>
+                Приклади застосування</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Приведи примеры успешного применения <b> {{ asp }} </b> в контексте <b> {{  targ }} </b>. Как этот подход используется и какие лучшие практики можно применить?</td>
+                Наведи приклади успішного застосування <b> {{ asp }} </b> в контексті <b> {{  targ }} </b>. Як цей підхід використовується і які найкращі практики можна застосувати?</td>
             </tr>
             <tr class="[tbody>&amp;]:odd:bg-bg-500/10">
 
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Описание применения</td>
+                Опис застосування</td>
               <td
                 class="border-t-border-100/50 [&amp;:not(:first-child)]:-x-[hsla(var(--border-100) / 0.5)] border-t-[0.5px] px-2 [&amp;:not(:first-child)]:border-l-[0.5px]">
-                Опиши применение <b> {{ asp }} </b> в контексте <b> {{ targ }} </b>.
-                Какие примеры успешного использования и лучшие практики существуют?</td>
+                Опиши застосування <b> {{ asp }} </b> в контексті <b> {{ targ }} </b>.
+                Які приклади успішного використання та найкращі практики існують?</td>
             </tr>
           </tbody>
         </table>
